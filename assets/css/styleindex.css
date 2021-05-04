@@ -1,0 +1,903 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ESTILOS Y ANIMACION LINEA LLAMENOS¡ */
+.contnum1 {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    border-bottom: solid rgb(158, 157, 157, 0.5) 0.1px;
+}
+
+.contnum2 {
+    width: 60%;
+    height: auto;
+    background-color: #ffffff;
+    float: left;
+    text-align: right;
+    font-size: 1.5em;
+    margin: auto;
+    display: table;
+}
+
+.contnum3 {
+    width: 40%;
+    height: auto;
+    background-color: #ffffff;
+    float: left;
+}
+
+.contnum3 a {
+    text-decoration: none;
+    color: #ff0000;
+    font-size: 1.5em;
+}
+
+.contnum3 a:hover {
+    pointer-events: visible;
+}
+
+@media screen and (max-width: 500px) {
+
+    .contnum3,
+    .contnum2 {
+        width: 50%;
+        font-size: 1em;
+    }
+
+    .contnum3 a {
+        font-size: 1.2em;
+    }
+}
+
+.logotel {
+    width: 25px;
+}
+
+.logotel:hover {
+    pointer-events: visible;
+}
+
+#llamanosp {
+    position: relative;
+    float: right;
+    background: #ffffff;
+    color: #000000;
+    font-size: 1em;
+}
+
+#llamanosp span{
+    position: absolute;
+    right: 0;
+    width: 0;
+    background: #ffffff;
+    border-left: 3px solid #000;
+    animation: escribir 3s steps(30) infinite alternate;
+}
+
+@keyframes escribir {
+    from {
+        width: 100%
+    }
+
+    to {
+        width: 0
+    }
+}
+
+#continernav {
+    width: 100%;
+    height: 70px;
+    background-color: red;
+    z-index: 999;
+}
+
+.logo {
+    width: 25%;
+    height: 70px;
+    float: left;
+    background-color: white;
+}
+
+
+#logo {
+    width: 80px;
+    position: relative;
+    animation-name: arrancar;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes arrancar {
+
+    0% {
+        transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        left: 0px;
+        top: 3px;
+    }
+
+    50% {
+        left: 200px;
+        top: 3px;
+    }
+
+    100% {
+        left: 0px;
+        top: 3px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .logo {
+        width: 25%;
+    }
+
+    #logo {
+        animation: none;
+        top: 5px;
+        left: 25px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .logo {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+}
+
+#logo:hover {
+    pointer-events: visible;
+}
+
+
+/* ESTILO MENU DE NAVEGACION */
+
+#topnav {
+    width: 75%;
+    height: 70px;
+    float: right;
+    background-color: white;
+
+}
+
+.topnav {
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 25px 16px 10px 16px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.topnav a.active {
+    color: #339999;
+}
+
+.topnav a:hover {
+    background: linear-gradient(to right, #b47dcd, #e878a2, #eb85ab);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    
+    color: transparent;
+}
+
+.menu a {
+    position: relative;
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #b47dcd, #e878a2, #eb85ab);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.menu a:hover::before {
+    transform: scaleX(1);
+}
+
+.menu[data-animation="center"] a::before {
+    transform-origin: center;
+}
+
+
+
+/* styles the search bar*/
+#searchBar {
+    float: right;
+    padding: 7px;
+    border: none;
+    margin-top: 14px;
+    margin-right: 16px;
+    font-size: 15px;
+    border-radius: 5px 0px 0px 5px;
+    transform: translate(7%, 0%);
+    transition: .1s ease-in-out;
+    border-bottom: 1px solid DarkSlateGrey;
+}
+
+#buscar {
+    float: right;
+    padding: 5px 8px;
+    margin-top: 14px;
+    margin-right: 15px;
+    background: #dddddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+    transition: .1s ease-in-out;
+    text-shadow: 1px 1px 0px white;
+    border: 1px solid white;
+    border-bottom: 1px solid DarkSlateGrey;
+}
+
+#buscar:focus {
+    border-top: 1px solid LightGrey;
+    box-shadow: inset 0px 0px 10px 0px #6b6b6b;
+    outline: none;
+    font-size: 16px;
+    padding: 6px 8.5px;
+}
+
+#searchBar:focus {
+    outline: 0;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.content {
+    padding-top: 0px;
+}
+
+@media screen and (max-width: 800px) {
+    #topnav {
+        display: none;
+    }
+}
+
+/* ESTILOS DE MENU SUPERPUESTO */
+
+#contenmenuicon {
+    width: 50%;
+    height: 70px;
+    float: left;
+    background-color: white;
+    display: none;
+}
+
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 10;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+#MenuIcon {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: white;
+}
+
+@media screen and (max-width: 800px) {
+    #contenmenuicon {
+        display: block;
+    }
+}
+
+
+@media screen and (max-height: 450px) {
+    .overlay {
+        overflow-y: auto;
+    }
+
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+/* ESTILOS PARA EL SLIDER */
+
+.mySlides {
+    padding: 0px;
+    display: none;
+}
+
+
+/* FOOTER */
+
+footer{
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    
+}
+#site-footer{
+position: relative;
+width: 100%;
+text-align: center;
+justify-content: center ;
+display: flex;
+
+}
+#footersvg{
+    width: 100%;
+    bottom: 0;
+}
+#edificio {
+    position: absolute;
+    width: 60px;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#ciudadubicacion{
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    font-size: 1.2em;
+    color: #ff6666;
+    font-weight: 500;
+    transform: translate(-50%, -50%);
+
+}
+#logoubicacion {
+    position: absolute;
+    width: 15%;
+
+}
+#copyr{
+    position: absolute;
+    color: white;
+    font-size: 0.8em;
+    bottom: 5px;
+    text-align: center;
+}
+@media screen and (max-width: 360px) {
+
+    #ciudadubicacion{
+        font-size: 0.8em;
+    }
+   #copyr{
+        bottom: 0px;
+       font-size: 0.5em;
+   }
+}
+
+
+
+/* CSS PARA BOTONES REDES SOCIALES */
+.social {
+    position: fixed;
+    /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+    left: 0;
+    /* Establecemos la barra en la izquierda */
+    top: 40%;
+    /* Bajamos la barra 200px de arriba a abajo */
+    z-index: 2000;
+    /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+
+.social ul {
+    list-style: none;
+}
+
+.social ul li a {
+    display: inline-block;
+    color: #fff;
+    background: #000;
+    padding: 15px 15px;
+    text-decoration: none;
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    /* Establecemos una transición a todas las propiedades */
+}
+
+.social ul li .icon-facebook {
+    background: #3b5998;
+}
+
+/* Establecemos los colores de cada red social, aprovechando su class */
+.social ul li .icon-messenger {
+    background: #00b2ff;
+}
+
+.social ul li .icon-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.social ul li .icon-mail2 {
+    background: #db4a39;
+}
+
+.social ul li a:hover {
+    background: #000;
+    /* Cambiamos el fondo cuando el usuario pase el mouse */
+    padding: 15px 25px;
+    /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
+}
+
+/* BOTON FLOTANTE WHATSAPP */
+
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.float:hover {
+    text-decoration: none;
+    color: #25d366;
+    background-color: #fff;
+}
+
+.my-float {
+    margin-top: 16px;
+}
+#mensajewhat{
+    position: fixed;
+    bottom: 55px;
+    right: 110px;
+    width: 190px;
+    height: 35px;
+    background-color: wheat;
+    color: rgb(77, 74, 74);
+    font-size: 14px;
+    padding-top: 7px;
+    border-radius: 10px;
+}
+
+/* SECCION FLIP */
+#animacionTextFlip{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #ff6666;
+    background-color: #fff;
+}
+#wt1{
+    font-weight: 500;
+}
+#wt2{
+    font-size: 3rem;
+    color: #535353;
+    font-weight: 500;
+}
+#contentFlip {
+    width: 100%;
+    height: auto;
+}
+#fliphogar{
+    width: 50%;
+    float: left;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 150px;
+}
+#flipOfice{
+    width: 50%;
+    float: right;
+     padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 150px;
+}
+.flip-card {
+    background-color: transparent;
+    width: 500px;
+    height: 350px;
+    perspective: 1000px;
+    
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color:#339999;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.flip-card-front {
+    width: 100%;
+    height: 96%;
+    background-color: #339999;
+    color: black;
+    }
+
+.imgfront{
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+.flip-card-back {
+    display: table;
+    background-color: #339999;
+    color: white;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+}
+.flip-card-back button{
+    display: table-cell;
+    vertical-align: middle;
+}
+.flip-card-back p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 1500px) {
+
+    #fliphogar{
+            padding-left: 100px;
+           
+    }
+    #flipOfice {
+        padding-right: 100px;
+        
+
+    }
+}
+@media screen and (max-width: 1300px) {
+
+    #fliphogar {
+        padding-left: 0px;
+    }
+
+    #flipOfice {
+        padding-right: 0px;
+
+    }
+}
+@media screen and (max-width: 1100px) {
+    #fliphogar,
+    #flipOfice {
+        width: 100%;
+       
+        
+    }
+    #flipOfice{
+         padding-bottom: 30px;
+    }
+}
+
+#ContentImgFront{
+    width: 100%;
+    position: absolute;
+    
+}
+#fondotrans{
+    
+    display: table;
+    z-index: 1;
+    position:relative;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0, 0%, 0%, 0.6);
+    border-radius: 20px;
+}
+.opcionhorgar {
+   color: white;
+   font-size: 2rem;
+}
+.icon-office,
+.icon-home {
+    font-size: 100px;
+    display: table-cell;
+    vertical-align: middle;
+}
+@media screen and (max-width: 600px) {
+
+    .flip-card {
+        width: 400px;
+        height: 250px;
+    }
+
+    .imgfront {
+        width: 400px;
+        height: 240px;
+    }
+
+    #flipOfice {
+        padding-top: 5px;
+    }
+
+    .icon-office,
+    .icon-home {
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 550px) {
+
+    .flip-card {
+
+        width: 300px;
+        height: 200px;
+    }
+
+    .imgfront {
+        width: 300px;
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    #wt1,
+    #wt2 {
+        font-size: 2rem;
+    }
+}
+.button {
+    background-color: #ff6666;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* SECCION MAPA Y ZONA OPERACION */
+
+#contenzonaoperacion{
+    width: 100%;
+    
+}
+.infozonaoperacion {
+    
+    width: 50%;
+    float: left;
+    height: 500px;
+    background-color: #f1eee9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#centrar1{
+    
+    width: 400px;
+
+}
+.centrartext{
+    text-align: center;
+}
+#refmap{
+    width: 100px;
+}
+#formatotitutlozona {
+    color: #ff6666;
+    font-weight: 700;
+}
+#fotmattexzona{
+    font-size: 1.2em;
+}
+#mapzonaoperacion{
+    width: 50%;
+    float: left;
+    height: 500px;
+    background-color: #f1eee9;
+    display: flex;
+    justify-content: center;    
+    align-items: center; 
+}
+#map{
+    width: 560px;
+    height: 400px;
+}
+
+@media screen and (max-width: 1100px) {
+
+    .infozonaoperacion
+    {
+        width: 100%;
+        height: inherit;
+    }
+    #mapzonaoperacion{
+        width: 100%;
+        height: 400px;
+    }
+    #map {
+        width: 380px;
+        height: 330px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    #fotmattexzona {
+        font-size: 14px;
+        }
+#mapzonaoperacion {
+
+    height: 330px;
+}
+    #map {
+        width: 250px;
+        height: 250px;
+    }
+}
+.divclientestext{
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.divclientestext h3{
+   font-size: 3rem;
+  color: #535353;
+  font-weight: 500;
+}
+.divclientestext span{
+     color: #ff6666;
+}
+
+/* CSS PARA EL CARRUCEL DE CLIENTES*/
+@media screen and (max-width: 1100px) {
+    .divclientestext h3 {
+        font-size: 2.5rem;}
+
+    .slider {
+        width: 700px;
+    }
+
+
+}
+@media screen and (max-width: 750px) {
+    .divclientestext {
+        height: 30px;
+    }
+    
+    .divclientestext h3 {
+        font-size: 2.5rem;
+    }
+
+    .slider {
+        width: 500px;
+    }
+    #carrusel {
+        height: 35vh;
+    }
+
+
+}
+@media screen and (max-width: 600px) {
+
+    .divclientestext h3{
+        font-size: 2rem;
+    }
+    .divclientestext{
+        height: 50px;
+    }
+    .slider{
+        width: 400px;
+    }
+    
+}
+@media screen and (max-width: 470px) {
+    .slider {
+        width: 300px;
+    }
+    .divclientestext h3 {
+        font-size: 1.5rem;
+
+}
+}
